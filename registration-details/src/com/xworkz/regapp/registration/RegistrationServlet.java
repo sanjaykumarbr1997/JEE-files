@@ -1,6 +1,7 @@
 package com.xworkz.regapp.registration;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +14,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-import com.mysql.cj.jdbc.Driver;
 
 @WebServlet("/reqs")
 
@@ -56,18 +56,9 @@ public class RegistrationServlet extends GenericServlet{
 					e.printStackTrace();
 				}
 			}
-			if(preparedStatement!=null) {
-				try {
-					preparedStatement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			
 		}
-		
-		
-		
-		
+			
 		
 	}
 
