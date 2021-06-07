@@ -26,7 +26,7 @@ public class RegisterServlet extends GenericServlet {
 		
 		
 		res.setContentType("text/html");
-		printWriter.print("Thank you"+ name);
+		printWriter.print("Thank you "+ name);
 		
 	}
 
