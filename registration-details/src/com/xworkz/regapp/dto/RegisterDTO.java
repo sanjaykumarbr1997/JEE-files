@@ -2,6 +2,7 @@ package com.xworkz.regapp.dto;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class RegisterDTO implements Serializable {
 	
 	private int registerid;

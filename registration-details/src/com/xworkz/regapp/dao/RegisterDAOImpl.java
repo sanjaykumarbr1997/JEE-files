@@ -8,6 +8,8 @@ import com.xworkz.regapp.dto.RegisterDTO;
 
 public class RegisterDAOImpl implements RegisterDAO   {
 
+	
+	
 	@Override
 	public void save(RegisterDTO dto) {
 		Connection connection =null;
@@ -17,7 +19,7 @@ public class RegisterDAOImpl implements RegisterDAO   {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/fbn","root","dontknow");
 			preparedStatement =connection.prepareStatement("insert into user_details values(?,?,?,?) ");
-			preparedStatement.setInt(1, 2);
+			preparedStatement.setInt(1, 4);
 			preparedStatement.setString(2, dto.getName());
 			preparedStatement.setString(3,dto.getEmail());
 			preparedStatement.setString(4,dto.getAge());	
