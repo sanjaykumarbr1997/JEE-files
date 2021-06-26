@@ -9,6 +9,6 @@ public interface NetflixDAO {
 
 	public void save(NetflixDTO dto);
 
-	public List<NetflixDTO> fetch() throws ClassNotFoundException, SQLException;
+	public List<NetflixDTO> fetch() ;
 
 }

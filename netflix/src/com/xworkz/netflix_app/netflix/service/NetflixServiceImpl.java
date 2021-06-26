@@ -30,7 +30,7 @@ public class NetflixServiceImpl implements NetflixService {
 
 
 	@Override
-	public List<NetflixDTO> validateAndFetch() throws ClassNotFoundException, SQLException {
+	public List<NetflixDTO> validateAndFetch()  {
 		
 		return nDAO.fetch();
 	}

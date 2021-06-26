@@ -13,6 +13,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 
+import org.hibernate.HibernateException;
+
 import com.xworkz.netflix_app.netflix.dto.NetflixDTO;
 import com.xworkz.netflix_app.netflix.service.NetflixService;
 import com.xworkz.netflix_app.netflix.service.NetflixServiceImpl;
@@ -27,7 +29,7 @@ import com.xworkz.netflix_app.netflix.service.NetflixServiceImpl;
 public class NetflixServlet extends GenericServlet {
 
 	@Override
-	public void service(ServletRequest req, ServletResponse res)throws ServletException  {
+	public void service(ServletRequest req, ServletResponse res)throws ServletException, IOException  {
 
 			ServletConfig config =getServletConfig();
 			String name = config.getInitParameter("key");
@@ -58,48 +60,56 @@ public class NetflixServlet extends GenericServlet {
 				netDTOs = netflixService.validateAndFetch();
 				PrintWriter printWriter = res.getWriter();
 				res.setContentType("text/html");
-				printWriter.write("Thank you ");
-				printWriter.println(" ");
+
+				printWriter.println("<html> \r\n" + 
+						"	 <meta charset=\\\"ISO-8859-1\\\"> \r\n" + 
+						"	<head>\r\n" +
+						"	<title>Movies List</title> \r\n" + 
+						"	<h3 style:>Entries Updated<h3>\r\n" +
+						"	<style>\r\n" + 
+						"       	 table,td,th{\r\n" + 
+						"            border:  solid ;\r\n" + 
+						"		    border-collapse: collapse;\r\n" + 
+						         
+						"            } \r\n" + 
+						"		        	   		\r\n" + 
+						"		        	   		\r\n" + 
+						"		   </style>\r\n" + 
+						"		    </head>\r\n" + 
+						"		    <body bgcolor=black>\r\n" + 
+						"		        	   	    	   \r\n" + 
+						"		        <table align=\"center\" style=\"color: red;\" > \r\n" + 
+						"                 \r\n" + 
+						"                <caption style=\"font-size: 30px;\">ENTRIES UPDATED</caption>         \r\n" +
+						"                   <tr>\r\n" + 
+						"                        <th style=\"height: 50px;width: 100px;\">Id</th>\r\n" + 
+						"                        <th style=\"height: 50px;width: 100px;\">Name</th>\r\n" + 
+						"                        <th style=\"height: 50px;width: 100px;\">Type</th>\r\n" + 
+						"                        <th style=\"height: 50px;width: 100px;\">Ratings</th>\r\n" + 
+						"                        <th style=\"height: 50px;width: 100px;\">Release Year</th>\r\n" + 
+						"                    </tr> </table> ");  
 		       for(NetflixDTO netsDTO :netDTOs){
 		           if(netsDTO!=null){
-		        	   printWriter.print(" <html>\r\n" + 
-		        	   		"	        	   <head>\r\n" + 
-		        	   		"	        	   <meta charset=\"ISO-8859-1\">\r\n" + 
-		        	   		"	        	   <title>Movies List</title>\r\n" + 
-		        	   		"                   <style>table,td{\r\n" + 
-		        	   		"        border: 1px solid black;\r\n" + 
-		        	   		"        border-collapse: collapse;     \r\n" + 
-		        	   		
+		        	   printWriter.print("<table align=\"center\" style=\"color: red;\">"
+		        	   		+ "<tr>\r\n" + 
+		        	   		"                        <td style=\"height: 50px;width: 100px;\">"+netsDTO.getId()         +"</td>\r\n" + 
+		        	   		"                        <td style=\"height: 50px;width: 100px;\">"+netsDTO.getName()       +"</td>\r\n" + 
+		        	   		"                        <td style=\"height: 50px;width: 100px;\">"+netsDTO.getType()       +"</td>\r\n" + 
+		        	   		"                        <td style=\"height: 50px;width: 100px;\">"+netsDTO.getRatings()    +"</td>\r\n" + 
+		        	   		"                        <td style=\"height: 50px;width: 100px;\">"+netsDTO.getReleaseYear()+"</td>\r\n" + 
+		        	   		"                    </tr>   		\r\n" + 
+		        	   		"		        \r\n" + 
 		        	   		"\r\n" + 
-		        	   		"        } </style>"+
-		        	   		"	        	   </head>\r\n" + 
-		        	   		"	        	   <body bgcolor=white>\r\n" + 
-		        	   		"	        	   	\r\n" + 
-		        	   		"\r\n" + 
-		        	   		"	        	  \r\n" + 
-		        	   		"	        	   <table border=\"2\" bgcolor=\"grey\" > \r\n" + 
-		        	   		
-		        	   		"	        		<tr> \r\n" + 
-		        	   		"	        			<td style=\"height:50px;width:100px\" >"+ netsDTO.getId()+"</td>\r\n" + 
-		        	   		"	        			<td style=\"height:50px;width:100px\"> "+ netsDTO.getType()+" </td>   \r\n" + 
-		        	   		"	        			<td style=\"height:50px;width:100px\">"+ netsDTO.getName()+"</td>\r\n" + 
-		        	   		"	        			<td style=\"height:50px;width:100px\">"+ netsDTO.getRatings()+"</td>\r\n" + 
-		        	   		"	        			<td style=\"height:50px;width:100px\">"+ netsDTO.getReleaseYear()+"</td>\r\n" + 
-		        	   		"\r\n" + 
-		        	   		"	        		</tr>\r\n" + 
-		        	   		"\r\n" + 
-		        	   		"	        		\r\n" + 
-		        	   		"\r\n" + 
-		        	   		
-		        	   		"	        	</table>\r\n" + 
-		        	   		"	        	</body>\r\n" + 
-		        	   		"	        	   </html>");
+		        	   		"		        	   		\r\n" + 
+		        	   		"		    	</table>\r\n" + 
+		        	   		"            </body>\r\n" + 
+		        	   		" </html>");
 		      
 		           }
 
 			
 		           	}
-			} catch (SQLException |ClassNotFoundException | IOException e) {
+			} catch (HibernateException e) {
 				e.printStackTrace();
 			} 
 	         
