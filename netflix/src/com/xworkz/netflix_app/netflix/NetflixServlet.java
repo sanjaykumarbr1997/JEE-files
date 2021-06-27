@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -19,7 +20,7 @@ import com.xworkz.netflix_app.netflix.dto.NetflixDTO;
 import com.xworkz.netflix_app.netflix.service.NetflixService;
 import com.xworkz.netflix_app.netflix.service.NetflixServiceImpl;
 
-@WebServlet(urlPatterns="/net",initParams= { 
+@WebServlet(urlPatterns="/net",loadOnStartup=72,initParams= { 
 		@WebInitParam(name="key",value="Roy")
 		
 		
@@ -34,6 +35,9 @@ public class NetflixServlet extends GenericServlet {
 			ServletConfig config =getServletConfig();
 			String name = config.getInitParameter("key");
 			System.out.println(name);
+			
+			ServletContext context = getServletContext();
+			String msg = context.getInitParameter("message");
 			
 			String movieName=req.getParameter("movieName");
 			String movieType=req.getParameter("movieType");
@@ -52,9 +56,12 @@ public class NetflixServlet extends GenericServlet {
 		
 			NetflixService netflixService = new NetflixServiceImpl() ;
 			netflixService.validateAndSave(dto);
+			/*
+			PrintWriter printWriter2 = res.getWriter();
+			res.setContentType("text/html");
+			printWriter2.print("thank you"+name+" "+msg);
 			
-			
-			
+			*/
 			List<NetflixDTO> netDTOs;
 			try {
 				netDTOs = netflixService.validateAndFetch();

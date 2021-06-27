@@ -5,4 +5,28 @@
     <welcome-file>netflix.jsp</welcome-file>
     
   </welcome-file-list>
+  <!--
+  <servlet>
+  <servlet-name>net</servlet-name>
+  <servlet-class>com.xworkz.netflix_app.netflix</servlet-class>
+  
+  <init-param>
+  <param-name></param-name>
+  <param-value></param-value>
+  </init-param>
+  <load-on-startup>3</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>net</servlet-name>
+  <url-pattern>/net</url-pattern>
+  </servlet-mapping>
+  
+    -->
+  <context-param>
+  	<param-name>message</param-name>
+  	<param-value>Enjoy movies only on netflix</param-value>
+  
+  </context-param>
+  
 </web-app>
