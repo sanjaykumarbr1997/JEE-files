@@ -30,7 +30,7 @@
 	
 	<!-- expression tag -->
 	<%=getData() %>
-		<!-- declaration tag -->
+		<!-- declarative tag -->
 		<%!public Date getData(){
 			Date dat = new Date();
 			return dat;
