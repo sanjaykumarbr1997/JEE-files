@@ -3,7 +3,7 @@
 
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whisky entry</title>
+<title>Movies entry</title>
 
 <style>
 * {
@@ -75,13 +75,13 @@ iframe {
 	justify-content: center;
 	align-items: center;
 	padding: 15px;
-	background: rgba(0, 204, 153, 0);
+	background: rgba(51, 153, 255, 0);
 }
 
 .wrap-contact3 {
 	width: 500px;
 	background: #ff0000;
-	background: linear-gradient(45deg, #990000, #990000);
+	background: linear-gradient(45deg, #3399ff, #3399ff);
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 72px 55px 65px 55px;
@@ -247,36 +247,31 @@ input.input3 {
 <body>
 
 	<div class="bg-contact3"
-		style="background-image: url('https://i.pinimg.com/originals/35/eb/1f/35eb1f018f21840ddb8679853a37df67.jpg');">
+		style="background-image: url('https://images.unsplash.com/photo-1497911174120-042e550e7e0a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGZlc3RpdmFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form" action = "whisky" method="post">
-					<span class="contact3-form-title"> ENTER WHISKY DETAILS </span>
+				<form class="contact3-form validate-form" action = "fest" method="get">
+					<span class="contact3-form-title"> ENTER FESTIVAL DETAILS </span>
 
 
 
 					<div class="wrap-input3 validate-input"
 						data-validate="Name is required">
-						<input class="input3" type="text" name="whiskyName"
-							placeholder="Enter Whisky Name" required> <span
+						<input class="input3" type="text" name="festivalName"
+							placeholder="Enter Festival Name" required> <span
 							class="focus-input3"></span>
 					</div>
 
 
 					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyQuantity"
-							placeholder="Enter Whisky Quantity" required> <span
-							class="focus-input3"></span>
-					</div>
-					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyOrderd"
-							placeholder="Enter Number of bottles ordered" required> <span
+						<input class="input3" type="text" name="festivalMonth"
+							placeholder="Enter FestivalMonth" required> <span
 							class="focus-input3"></span>
 					</div>
 
 					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyPrice"
-							placeholder="Enter Whisky Price" required> <span
+						<input class="input3" type="text" name="festivalDays"
+							placeholder="Enter Festival Days" required> <span
 							class="focus-input3"></span>
 					</div>
 

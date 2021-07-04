@@ -26,8 +26,8 @@ public class WaterPurifierServlet extends HttpServlet{
 		req.setAttribute("pr", price);
 		
 		//chaining
-		resp.sendRedirect("https://www.kent.co.in/gdn-new/index.php?utm_source=Google_Paid&utm_campaign=Water_Purifier_Brand_Keywords_BMM_Demo_Search&utm_medium=Google_Search&utm_term=Buy&utm_content=Text_Ads&gclid=CjwKCAjww-CGBhALEiwAQzWxOvMrlwhxzcLClOFKzYhPTaH_sE34rNR15xWgld4GNLyCqJpp-gvdpBoCaKwQAvD_BwE");
-		 
+		resp.sendRedirect("https://www.kent.co.in/gdn-new/index.php?utm_source=Google_Paid&utm_campaign=Water_Purifier_Brand_Keywords_BMM_Demo_Search&utm_medium=Google_Search&utm_term=Buy&utm_content=Text_Ads&gclid=CjwKCAjww-CGBhALEiwAQzWxOvMrlwhxzcLClOFKzYhPTaH_sE34rNR15xWgld4GNLyCqJpp-gvdpBoCaKwQAvD_BwE"+name);
+		
 		
 		
 	}

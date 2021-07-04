@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Whisky entry</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 <style>
 * {
 	margin: 0px;
@@ -75,13 +76,13 @@ iframe {
 	justify-content: center;
 	align-items: center;
 	padding: 15px;
-	background: rgba(0, 204, 153, 0);
+	background: rgba(51, 153, 255, 0);
 }
 
 .wrap-contact3 {
 	width: 500px;
 	background: #ff0000;
-	background: linear-gradient(45deg, #990000, #990000);
+	background: linear-gradient(45deg, #3399ff, #3399ff);
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 72px 55px 65px 55px;
@@ -245,38 +246,41 @@ input.input3 {
 
 </head>
 <body>
+<h3>${nam }</h3>
 
 	<div class="bg-contact3"
-		style="background-image: url('https://i.pinimg.com/originals/35/eb/1f/35eb1f018f21840ddb8679853a37df67.jpg');">
+		style="background-image: url('https://www.teahub.io/photos/full/18-180186_train-wallpaper-for-desktop.jpg');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form" action = "whisky" method="post">
-					<span class="contact3-form-title"> ENTER WHISKY DETAILS </span>
+				<!-- <form class="contact3-form validate-form" action = "ticket" method="get"> -->
+				<form class="contact3-form validate-form" action = "display.jsp" method="get">
+					<span class="contact3-form-title"> Railway Ticket Booking </span>
 
 
 
 					<div class="wrap-input3 validate-input"
 						data-validate="Name is required">
-						<input class="input3" type="text" name="whiskyName"
-							placeholder="Enter Whisky Name" required> <span
+						<input class="input3" type="text" name="name"
+							placeholder="Enter Passenger Name" required> <span
 							class="focus-input3"></span>
 					</div>
 
 
 					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyQuantity"
-							placeholder="Enter Whisky Quantity" required> <span
-							class="focus-input3"></span>
-					</div>
-					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyOrderd"
-							placeholder="Enter Number of bottles ordered" required> <span
+						<input class="input3" type="text" name="trainNO"
+							placeholder="Enter Train No." required> <span
 							class="focus-input3"></span>
 					</div>
 
 					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="whiskyPrice"
-							placeholder="Enter Whisky Price" required> <span
+						<input class="input3" type="text" name="trainSource"
+							placeholder="Enter Source" required> <span
+							class="focus-input3"></span>
+					</div>
+					
+					<div class="wrap-input3 validate-input">
+						<input class="input3" type="text" name="trainDestination""
+							placeholder="Enter Train Destination" required> <span
 							class="focus-input3"></span>
 					</div>
 
